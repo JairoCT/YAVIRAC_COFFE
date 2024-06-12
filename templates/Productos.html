@@ -30,7 +30,7 @@
           <li><a href="/carrito">Mi Carrito</a></li>
         </ul>
       </li>
-      <li><a href="#cont">Contactos</a></li>
+      <li><a href="/#cont">Contactos</a></li>
       <li><a href="/registro">Login/Registro</a></li>
     </ul>
   </nav><br><br><br><br>
@@ -41,181 +41,207 @@
     <button onclick="scrollToPostres()">Postres</button>
     <button onclick="scrollToEspecialidades()">Especialidades</button>
   </div>
-  <h2 id="cafes">Cafés</h2>
 
-  <div class="services">
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE-3$</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-    <!-- Aquí van más productos de café -->
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
 
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
 
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
+  <form id="cafes" class="form" style="display: none;">
+    <h2 >Cafés</h2>
+    <div class="services">
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE-3$</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+      <!-- Aquí van más productos de café -->
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
 
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
     </div>
+  </form>
+
+  <form id="postres" class="form" style="display: none;">
+    <h2 >Postres</h2>
+    <div class="services">
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE-3$</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+      <!-- Aquí van más productos de café -->
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+    </div>
+  </form>
+
+  
+  <form id="especialidades" class="form" style="display: none;">
+    <h2 >Especialidades</h2>
+    <div class="services">
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE-3$</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+      <!-- Aquí van más productos de café -->
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+    </div>
+  </form>
+
+  <!-- Botón "Comprar" -->
+  <div class="comprar-button">
+    <button onclick="comprar()">Comprar</button>
   </div>
 
-  <h2 id="postres">Postres</h2>
-
-  <div class="services">
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
+  <!-- Modal -->
+  <div id="registroModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <p>¡Debes registrarte para comprar!</p>
+      <button onclick="window.location.href='/registro'">Registrarse</button>
     </div>
-    <!-- Aquí van más productos de postres -->
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-  </div>
-
-  <h2 id="especialidades">Especialidades</h2>
-
-  <div class="services">
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-    <!-- Aquí van más productos de especialidades -->
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-
-    <div class="product">
-      <img src="img/cfe.jpg">
-      <h3>COFFEE</h3>
-      <samp class="quantity-control">
-        <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-        <input type="text" value="0" class="quantity" readonly>
-        <button class="increase" onclick="increaseQuantity(this)">+</button>
-      </samp>
-    </div>
-
   </div>
 
   <script>
     function scrollToCafes() {
-      document.getElementById('cafes').scrollIntoView();
+      document.getElementById('cafes').style.display = 'block';
+      document.getElementById('postres').style.display = 'none';
+      document.getElementById('especialidades').style.display = 'none';
     }
 
     function scrollToPostres() {
-      document.getElementById('postres').scrollIntoView();
+      document.getElementById('cafes').style.display = 'none';
+      document.getElementById('postres').style.display = 'block';
+      document.getElementById('especialidades').style.display = 'none';
     }
 
     function scrollToEspecialidades() {
-      document.getElementById('especialidades').scrollIntoView();
-    }qqq
+      document.getElementById('cafes').style.display = 'none';
+      document.getElementById('postres').style.display = 'none';
+      document.getElementById('especialidades').style.display = 'block';
+    }
 
     function increaseQuantity(button) {
       var input = button.previousElementSibling;
@@ -231,13 +257,112 @@
       }
     }
 
+    function comprar() {
+      var usuarioRegistrado = false; // Aquí va tu lógica de verificación
+      if (usuarioRegistrado) {
+        window.location.href = "/carrito";
+      } else {
+        mostrarModal();
+      }
+    }
+
+    function mostrarModal() {
+      var modal = document.getElementById('registroModal');
+      modal.style.display = "block";
+    }
+
+    function cerrarModal() {
+      var modal = document.getElementById('registroModal');
+      modal.style.display = "none";
+    }
+
+    // Para cerrar el modal si el usuario hace clic fuera de él
+    window.onclick = function(event) {
+      var modal = document.getElementById('registroModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   </script>
+
+<style>
+  /* Estilo para el modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .comprar-button {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .comprar-button button {
+    background-color: rgb(150, 87, 45); 
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 20px 2px; 
+    cursor: pointer; 
+    border-radius: 12px; 
+    transition: background-color 0.3s; 
+  }
+
+  .comprar-button button:hover {
+    background-color: rgb(150, 87, 45);
+  }
+
+  /* Estilos del botón Registrarse */
+.modal-content button {
+  background-color: rgb(150, 87, 45); 
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: rgb(150, 87, 45);
+}
+
+</style>
 </body>
 
 </html>
-
-
-
-
-
-</body>

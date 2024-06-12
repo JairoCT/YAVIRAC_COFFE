@@ -7,7 +7,7 @@ body, html {
 }
 
 .container {
-    background-image: url('img/cfe.jpg');
+    background-image: url('../imgs/cfe.jpg');
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
