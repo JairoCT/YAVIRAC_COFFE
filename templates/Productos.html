@@ -6,32 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YAVIRAC COFFEE</title>
   <link rel="shortcut icon" href="img/Logotipo cafetería vintage café.png" type="image/x-icon">
-  <link rel="stylesheet" href="Productos.css" />
+  <link rel="stylesheet" href="../static/css/Productos.css" />
 </head>
 
-<body>
+<body style="background-image: url('https://wallpapercave.com/wp/60P9094.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
   <!-- Botones para la navegación -->
-  <nav> 
+  <nav>
     <input type="checkbox" id="menu" />
     <label for="menu" class="checkbtn">
       <i class="fa-solid fa-bars"></i>
     </label>
-    
-    <a href="index.html" class="enlace">
-      <img src="img/image-removebg-preview.png" class="logo">
+
+    <a href="/" class="enlace">
+      <img src="../static/imgs/image-removebg-preview.png" class="logo">
     </a>
 
     <ul class="nav">
-      <li><a href="index.html">Inicio</a></li>
+      <li><a href="/">Inicio</a></li>
       <li>
-        <a >Carrito</a>
+        <a>Carrito</a>
         <ul class="nav-vertical">
-          <li><a href="Productos.html">Productos</a></li>
-          <li><a href="#inte">Mi Carrito</a></li>
+          <li><a href="/productos">Productos</a></li>
+          <li><a href="/carrito">Mi Carrito</a></li>
         </ul>
       </li>
       <li><a href="#cont">Contactos</a></li>
-      <li><a href="Registro.html">Login/Registro</a></li>
+      <li><a href="/registro">Login/Registro</a></li>
     </ul>
   </nav><br><br><br><br>
 
@@ -215,7 +215,7 @@
 
     function scrollToEspecialidades() {
       document.getElementById('especialidades').scrollIntoView();
-    }
+    }qqq
 
     function increaseQuantity(button) {
       var input = button.previousElementSibling;
@@ -230,6 +230,7 @@
         input.value = value - 1;
       }
     }
+
   </script>
 </body>
 

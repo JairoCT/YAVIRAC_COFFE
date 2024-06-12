@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YAVIRAC COFFEE</title>
-  <link rel="stylesheet" href="../static/css/style.css"/>
+  <link rel="stylesheet" href="../static/css/style.css" />
 </head>
 
 <body>
@@ -14,22 +14,22 @@
     <label for="menu" class="checkbtn">
       <i class="fa-solid fa-bars"></i>
     </label>
-    
-    <a href="#inicio" class="enlace">
-      <img src="../imgs/image-removebg-preview.png" class="logo">
+
+    <a href="/" class="enlace">
+      <img src="../static/imgs/image-removebg-preview.png" class="logo">
     </a>
 
     <ul class="nav">
-      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="/">Inicio</a></li>
       <li>
-        <a >Carrito</a>
+        <a>Carrito</a>
         <ul class="nav-vertical">
-          <li><a href="Productos.html">Productos</a></li>
-          <li><a href="/miCarrito.html">Mi Carrito</a></li>
+          <li><a href="/productos">Productos</a></li>
+          <li><a href="/carrito">Mi Carrito</a></li>
         </ul>
       </li>
       <li><a href="#cont">Contactos</a></li>
-      <li><a href="Registro.html">Login/Registro</a></li>
+      <li><a href="/registro">Login/Registro</a></li>
     </ul>
   </nav>
 
@@ -42,9 +42,9 @@
 
 
   <div class="carrusel" id="carrusel">
-    <img src="img\cafe.png" alt="Imagen 1">
-    <img src="img\cafe2.jpg" alt="Imagen 2">
-    <img src="img\cfe.jpg" alt="Imagen 3" >
+    <img src="./static/imgs/cafe.png" alt="Imagen 1">
+    <img src="./static/imgs/cafe2.jpg" alt="Imagen 2">
+    <img src="./static/imgs/cfe.jpg" alt="Imagen 3">
   </div>
 
 
@@ -52,23 +52,23 @@
     var indice = 0;
     var imagenes = document.querySelectorAll('#carrusel img');
     var totalImagenes = imagenes.length;
-  
+
     function mostrarImagenes(ind) {
       imagenes.forEach(img => {
         img.classList.remove('active');
       });
       imagenes[ind].classList.add('active');
     }
-  
+
     function cambiarAutomaticamente() {
       indice = (indice + 1) % totalImagenes;
       mostrarImagenes(indice);
     }
-  
+
     setInterval(cambiarAutomaticamente, 2900); // Cambiar imagen cada 3 segundos
   </script>
 
-  
+
   <br>
   <br>
   <br>
@@ -78,20 +78,28 @@
     <div class="info1" id="quienes">
       <h3 class="info-title">¿Quienes Somos?</h3>
       <p>
-        YAVIRAC COFFEE les da bienvenida nosotros somos una página web dirigida a mostrar su catálogo y preparación de sus productos, con un enfoque en la calidad, preparación y su respectivo precio. 
-        Nuestra cafetería se creó por un grupo de compañeros apasionados por el gusto y la misma conclusión de lo delicioso que llega ser el café. Empezamos con una idea para implementar la información de mostrar un menú donde se detalle los productos con sus respectivos ingredientes a seleccionar y lo llamativo que pueden ser los precios. Nuestro punto de llegada es en el instituto superior de turismo y patrimonio Yavirac. Con el tiempo desarrollamos una página con su respectivo logo donde se interactuó la creatividad, calidad, sostenibilidad y sobre todo el trabajo en equipo.
+        YAVIRAC COFFEE les da bienvenida nosotros somos una página web dirigida a mostrar su catálogo y preparación de
+        sus productos, con un enfoque en la calidad, preparación y su respectivo precio.
+        Nuestra cafetería se creó por un grupo de compañeros apasionados por el gusto y la misma conclusión de lo
+        delicioso que llega ser el café. Empezamos con una idea para implementar la información de mostrar un menú donde
+        se detalle los productos con sus respectivos ingredientes a seleccionar y lo llamativo que pueden ser los
+        precios. Nuestro punto de llegada es en el instituto superior de turismo y patrimonio Yavirac. Con el tiempo
+        desarrollamos una página con su respectivo logo donde se interactuó la creatividad, calidad, sostenibilidad y
+        sobre todo el trabajo en equipo.
       </p>
     </div>
     <div class="info2">
       <h3 class="info-title">Misión</h3>
       <p>
-        Como misión, tenemos claro que queremos ofrecer e indicar productos de calidad que inspire a las personas a familiarizarse con nuestra marca y sus productos de calidad para el consumo de nuestro café.
+        Como misión, tenemos claro que queremos ofrecer e indicar productos de calidad que inspire a las personas a
+        familiarizarse con nuestra marca y sus productos de calidad para el consumo de nuestro café.
       </p>
     </div>
     <div class="info3">
       <h3 class="info-title">Visión</h3>
-      <p>
-        Nuestra visión es convertirnos en una marca reconocida en el país relacionado en bebidas y acompañados para el buen consumo del cliente.
+      <p
+        Nuestra visión es convertirnos en una marca reconocida en el país relacionado en bebidas y acompañados para el
+        buen consumo del cliente.
       </p>
     </div>
   </section>
@@ -104,16 +112,20 @@
         <h2>Contactos</h2>
         <ul>
           <li><a href="#">Telefonos: 02-3123144</a></li>
-          <li><a href="https://maps.app.goo.gl/3rKjmLGHirTGpRv87">Direccion: García Moreno S4-35 y, Quito 170401</a></li>
+          <li><a href="https://maps.app.goo.gl/3rKjmLGHirTGpRv87">Direccion: García Moreno S4-35 y, Quito 170401</a>
+          </li>
           <li><a href="mailto:tellitomurillodonoso@gmail.com">Email: "tellitomurillodonoso@gmail.com"</a></li>
           <li><a href="tel:+593099868394087291627">whatsapp: 0998683940</a></li>
           <li><a><br>Desarrollado por:<br>Cuichan Toapanta Jairo Ismael<br>Murillo Donoso Hugo Mateo
-            <br> Bedón Muñoz Jeremy Jofre<br>Ponce Suntaxi Alisson Johanna </a></li>
+              <br> Bedón Muñoz Jeremy Jofre<br>Ponce Suntaxi Alisson Johanna </a></li>
         </ul>
       </div>
       <div class="box">
         <h2>Ubicacion</h2>
-         <a><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7875332920307!2d-78.51926862584871!3d-0.2250843997726987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a28366b3d81%3A0xc6029256689ed873!2sInstituto%20Superior%20Tecnol%C3%B3gico%20Yavirac!5e0!3m2!1ses!2sec!4v1703912354320!5m2!1ses!2sec" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></a>
+        <a><iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7875332920307!2d-78.51926862584871!3d-0.2250843997726987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a28366b3d81%3A0xc6029256689ed873!2sInstituto%20Superior%20Tecnol%C3%B3gico%20Yavirac!5e0!3m2!1ses!2sec!4v1703912354320!5m2!1ses!2sec"
+            width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe></a>
         </a>
       </div>
 
