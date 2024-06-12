@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;  
+  font-family: 'Work Sans';
+}
+nav {
+  background: rgb(153, 71, 16);
+  color: rgb(218, 214, 214);
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  border-radius: 30px;
+  z-index: 1; 
+}
+.logo {
+  height: 50px;
+
+  margin-top: 4px;
+  margin-left: 3px;
+}
+.nav {
+  list-style: none;
+  display: flex;
+  line-height: 30px;
+  height: 55px;
+  margin-right: 10px;
+  float: right;
+  cursor: pointer;
+}
+.nav > li > a {
+  padding: 13px 15px;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.nav > li:hover {
+  background: rgb(150, 87, 45);
+  border-radius:60%;
+
+}
+.nav-vertical {
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: 136px;
+  background: rgb(117, 52, 8);
+  border-radius: 15%;
+}
+.nav li:hover .nav-vertical {
+  display: block;
+}
+.nav-vertical li:hover {
+  background-color: rgb(170, 84, 26);
+  border-radius: 25%;
+}
+.nav-vertical li a {
+  display: block;
+  color: wheat;
+  padding: 10px 10px 10px 7px;
+}
+#menu {
+  display: none;
+}
+
+.services {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  gap: 10px;
+  row-gap: 30px;
+  text-align: center;
+  background: rgb(255, 255, 255);
+}
+.services div {
+  border: 2px solid black;
+  background: rgb(255, 255, 255);
+  width: 17%;
+  box-shadow: 1px 1px 15px rgb(0, 0, 0);
+  border-radius: 3px;
+  height: 250px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+.services div:hover {
+  scale: 1.05;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.services div img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  max-width: 100%;
+}
+.services div h3 {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+.designs {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+  margin: 50px 0;
+  text-align: center;
+  align-items: center;
+}
+.quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.quantity-control button {
+    background-color: #af5d37;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 10px;
+}
+.quantity {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 50%; 
+    background-color: rgb(255, 164, 74); 
+    color: rgb(0, 0, 0); 
+    line-height: 30px; 
+}
+      /* Estilo para los botones de navegación */
+.navigation-buttons {
+  text-align: center;
+  margin-bottom: 20px; 
+}
+.navigation-buttons button {
+  padding: 20px 40px;
+  background-color: #af5d37; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  margin: 0 10px; 
+}
+.navigation-buttons button:hover {
+  background-color: #af5d37; 
+}

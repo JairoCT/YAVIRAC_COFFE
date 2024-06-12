@@ -1,0 +1,76 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+
+}
+
+.container {
+    background-image: url('img/cfe.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 50px;
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+}
+
+.form-content h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(153, 71, 16);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: rgb(230, 110, 31);
+}
+
+.form input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.form button {
+    width: 60%;
+    background-color: rgb(153, 71, 16);
+}
+
+.form button:hover {
+    background-color: rgb(153, 71, 16);
+}
+.b_regresar{
+    background-position: left;
+    display: flex;
+}
+
