@@ -15,6 +15,10 @@ def get_database():
     conn = connect(host =host,port =port,dbname=dbname,user=user,password=password)
     return conn  
 #los decoradores nos permite abrir desde el navegador un archivo especifico
+@app.route('/')
+def get_users_html():
+    return render_template('index.html')
+
 @app.get('/app/users')
 def get_users():
     conn = get_database()
@@ -23,13 +27,7 @@ def get_users():
     user = cursor.fetchall()
     print(user)
     return jsonify(user)
-@app.route('/', methods =['GET'])
-def get_users_html():
-    conn = get_database()
-    cursor = conn.cursor(cursor_factory = extras.RealDictCursor)
-    cursor.execute('select * from users')
-    user = cursor.fetchall()
-    return render_template('select.html', users=user)
+   
 @app.route('/create', methods = ['GET','post'])
 def create():
     if request.method == 'GET':
