@@ -5,10 +5,20 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;  
-  font-family: 'Work Sans';
+  font-family: 'Work Sans', sans-serif;
 }
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background: url('https://img.freepik.com/vector-gratis/patron-dibujo-grano-cafe-dibujado-mano_23-2150646733.jpg?w=996&t=st=1718338001~exp=1718338601~hmac=72238f92a64f45d48b62403016ef77201b324d152e91681ec2b85a31bbe97ba6') no-repeat center center fixed; /* Ruta de la imagen de fondo */
+  background-size: cover;
+  
+}
+
 nav {
-  background: rgb(153, 71, 16);
+  background: rgba(153, 71, 16, 0.9);
   color: rgb(218, 214, 214);
   height: 60px;
   position: fixed;
@@ -16,13 +26,18 @@ nav {
   border-radius: 30px;
   z-index: 1; 
   border: 3px solid beige;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
-.logo {
-  height: 50px;
 
-  margin-top: 4px;
-  margin-left: 3px;
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
+
 .nav {
   list-style: none;
   display: flex;
@@ -31,8 +46,8 @@ nav {
   margin-right: 10px;
   float: right;
   cursor: pointer;
-  
 }
+
 .nav > li > a {
   padding: 13px 15px;
   color: rgb(255, 255, 255);
@@ -41,11 +56,12 @@ nav {
   font-size: 20px;
   text-transform: uppercase;
 }
+
 .nav > li:hover {
   background: rgb(150, 87, 45);
-  border-radius:60%;
-  
+  border-radius: 60%;
 }
+
 .nav-vertical {
   position: absolute;
   display: none;
@@ -54,18 +70,122 @@ nav {
   background: rgb(117, 52, 8);
   border-radius: 15%;
 }
+
 .nav li:hover .nav-vertical {
   display: block;
 }
+
 .nav-vertical li:hover {
   background-color: rgb(170, 84, 26);
   border-radius: 25%;
 }
+
 .nav-vertical li a {
   display: block;
   color: wheat;
   padding: 10px 10px 10px 7px;
 }
+
 #menu {
   display: none;
+}
+
+/*carrito */
+#carrito-titulo {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 80px; /* Ajuste para que no quede detrás del menú fijo */
+  font-family: 'Arial', sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+/* Estilos para el contenedor de productos */
+#productos-container {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.producto {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.producto img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 15px;
+}
+
+.producto h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.producto p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #777;
+}
+
+.producto p.precio {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Estilos para el contenedor del total de la compra */
+#total-compra {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Estilos para el botón de menú en pantallas pequeñas */
+.checkbtn {
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .checkbtn {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    width: 100%;
+    justify-content: space-around;
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    background: #333;
+  }
+
+  nav ul li {
+    display: block;
+  }
 }

@@ -47,55 +47,25 @@
   <form id="cafes" class="form" style="display: none;">
     <h2 >Cafés</h2>
     <div class="services">
-      <div class="product">
-        <img src="../static/imgs/cfe.jpg">
-        <h3>COFFEE-3$</h3>
-        <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-          <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
-        </samp>
-      </div>
-      <!-- Aquí van más productos de café -->
-      <div class="product">
-        <img src="../static/imgs/cfe.jpg">
-        <h3>COFFEE</h3>
-        <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-          <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
-        </samp>
-      </div>
+      
+    <tbody>
+    {% for producto in productos %}
+      <div>
+          <tr>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.nombre_product }}</td>
+            <td>{{ producto.precio_product }}</td>$
+          </tr>
+          
+          <td><samp class="quantity-control">
+            <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" value="0" class="quantity" readonly>
+            <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+          </samp></td>
+        </div>
+    {% endfor %}
+    </tbody> 
 
-      <div class="product">
-        <img src="../static/imgs/cfe.jpg">
-        <h3>COFFEE</h3>
-        <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-          <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
-        </samp>
-      </div>
-
-      <div class="product">
-        <img src="../static/imgs/cfe.jpg">
-        <h3>COFFEE</h3>
-        <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-          <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
-        </samp>
-      </div>
-
-      <div class="product">
-        <img src="../static/imgs/cfe.jpg">
-        <h3>COFFEE</h3>
-        <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-          <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
-        </samp>
-      </div>
     </div>
   </form>
 
@@ -103,12 +73,12 @@
     <h2 >Postres</h2>
     <div class="services">
       <div class="product">
-        <img src="../static/imgs/cfe.jpg">
+        <img src="../static/imgs/asd.jpg">
         <h3>COFFEE-3$</h3>
         <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
           <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
         </samp>
       </div>
       <!-- Aquí van más productos de café -->
@@ -116,9 +86,9 @@
         <img src="../static/imgs/cfe.jpg">
         <h3>COFFEE</h3>
         <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
           <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
         </samp>
       </div>
 
@@ -126,9 +96,9 @@
         <img src="../static/imgs/cfe.jpg">
         <h3>COFFEE</h3>
         <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
           <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
         </samp>
       </div>
 
@@ -136,9 +106,9 @@
         <img src="../static/imgs/cfe.jpg">
         <h3>COFFEE</h3>
         <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
           <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
         </samp>
       </div>
 
@@ -146,10 +116,11 @@
         <img src="../static/imgs/cfe.jpg">
         <h3>COFFEE</h3>
         <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-          <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
-        </samp>
+          <samp class="quantity-control">
+            <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" value="0" class="quantity" readonly>
+            <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+          </samp>
       </div>
     </div>
   </form>
@@ -162,9 +133,9 @@
         <img src="../static/imgs/cfe.jpg">
         <h3>COFFEE-3$</h3>
         <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
           <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
         </samp>
       </div>
       <!-- Aquí van más productos de café -->
@@ -182,9 +153,9 @@
         <img src="../static/imgs/cfe.jpg">
         <h3>COFFEE</h3>
         <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
           <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
         </samp>
       </div>
 
@@ -192,19 +163,20 @@
         <img src="../static/imgs/cfe.jpg">
         <h3>COFFEE</h3>
         <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
-          <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
-        </samp>
+          <samp class="quantity-control">
+            <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" value="0" class="quantity" readonly>
+            <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+          </samp>
       </div>
 
       <div class="product">
         <img src="../static/imgs/cfe.jpg">
         <h3>COFFEE</h3>
         <samp class="quantity-control">
-          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
           <input type="text" value="0" class="quantity" readonly>
-          <button class="increase" onclick="increaseQuantity(this)">+</button>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
         </samp>
       </div>
     </div>
@@ -243,20 +215,6 @@
       document.getElementById('especialidades').style.display = 'block';
     }
 
-    function increaseQuantity(button) {
-      var input = button.previousElementSibling;
-      var value = parseInt(input.value);
-      input.value = value + 1;
-    }
-
-    function decreaseQuantity(button) {
-      var input = button.nextElementSibling;
-      var value = parseInt(input.value);
-      if (value > 0) {
-        input.value = value - 1;
-      }
-    }
-
     function comprar() {
       var usuarioRegistrado = false; // Aquí va tu lógica de verificación
       if (usuarioRegistrado) {
@@ -283,6 +241,22 @@
         modal.style.display = "none";
       }
     }
+
+  
+  function increaseQuantity(button) {
+    var input = button.parentNode.querySelector('input.quantity');
+    var currentValue = parseInt(input.value);
+    input.value = currentValue + 1;
+  }
+
+  function decreaseQuantity(button) {
+    var input = button.parentNode.querySelector('input.quantity');
+    var currentValue = parseInt(input.value);
+    if (currentValue > 0) {
+      input.value = currentValue - 1;
+    }
+  }
+
   </script>
 
 <style>
@@ -366,3 +340,13 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAVIRAC COFFEE</title>
+  <link rel="shortcut icon" href="img/Logotipo cafetería vintage café.png" type="image/x-icon">
+  <link rel="stylesheet" href="../static/css/Productos.css" />
+</head>
+
+<body style="background-image: url('https://wallpapercave.com/wp/60P9094.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+  <!-- Botones para la navegación -->
+  <nav>
+    <input type="checkbox" id="menu" />
+    <label for="menu" class="checkbtn">
+      <i class="fa-solid fa-bars"></i>
+    </label>
+
+    <a href="/" class="enlace">
+      <img src="../static/imgs/image-removebg-preview.png" class="logo">
+    </a>
+
+    <ul class="nav">
+      <li><a href="/">Inicio</a></li>
+      <li>
+        <a>Carrito</a>
+        <ul class="nav-vertical">
+          <li><a href="/productos">Productos</a></li>
+          <li><a href="/carrito">Mi Carrito</a></li>
+        </ul>
+      </li>
+      <li><a href="/#cont">Contactos</a></li>
+      <li><a href="/registro">Login/Registro</a></li>
+    </ul>
+  </nav><br><br><br><br>
+
+
+  <div class="container">
+    <form action='' method="POST">
+        <table class="table">
+            <tr>
+                <td>Stock</td>
+                <td><input type="text" name="stock" value="{{ producto.stock }}" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td>Nombre del Producto</td>
+                <td><input type="text" name="nombre_product" class="form-control" value="{{ producto.nombre_product }}" /></td>
+            </tr>
+            <tr>
+                <td>Precio del Producto</td>
+                <td><input type="text" name="precio_product" class="form-control" value="{{ producto.precio_product }}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit" value="Actualizar" class="btn btn-success">
+                    <a href='/Productos_admin' class="btn btn-dark">Cancelar</a>
+                </td>           
+            </tr>
+        </table>      
+    </form>    
+</div>
+
+
+
+</body>

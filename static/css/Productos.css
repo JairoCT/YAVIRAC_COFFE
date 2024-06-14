@@ -160,3 +160,8 @@ nav {
 .navigation-buttons button:hover {
   background-color: #af5d37; 
 }
+
+/* Estilo para el boton admin*/
+.Boton_admin{
+  justify-content: center;
+}

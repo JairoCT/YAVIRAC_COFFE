@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YAVIRAC COFFEE</title>
-  <link rel="stylesheet" href="../static/css/miCarrito.css"/>
+  <link rel="stylesheet" href="../static/css/miCarrito.css" />
 </head>
 
 <body>
@@ -33,14 +33,69 @@
     </ul>
   </nav>
 
-  <div>
-    <div id="productos-container">
-      <!-- Los productos se cargarán aquí mediante JavaScript -->
+  <br><h1 id="carrito-titulo">Carrito</h1>
+
+  <div id="productos-container">
+    <!-- Los productos se cargarán aquí mediante JavaScript -->
   </div>
+
   <div id="total-compra">
-      <!-- El total se calculará y mostrará aquí -->
+    <!-- El total se calculará y mostrará aquí -->
   </div>
+
   <script>
-      // Aquí irá tu código JavaScript para cargar los productos y calcular el total
+    var productos = [
+      { id: 1, nombre: 'Café Especial', imagen: '.../static/imgs/cafe.png', precio: 3, cantidad: 2 },
+      { id: 2, nombre: 'Postre de Chocolate', imagen: '.../static/imgs/cafe2.jpg ', precio: 5, cantidad: 1 }
+    ];
+
+    function cargarProductos() {
+      var productosContainer = document.getElementById('productos-container');
+
+      productos.forEach(function(producto) {
+        var productoDiv = document.createElement('div');
+        productoDiv.classList.add('producto');
+
+        var imagen = document.createElement('img');
+        imagen.src = producto.imagen;
+        imagen.alt = producto.nombre;
+        productoDiv.appendChild(imagen);
+
+        var nombreProducto = document.createElement('h3');
+        nombreProducto.textContent = producto.nombre;
+        productoDiv.appendChild(nombreProducto);
+
+        var cantidad = document.createElement('p');
+        cantidad.textContent = 'Cantidad: ' + producto.cantidad;
+        productoDiv.appendChild(cantidad);
+
+        var precioUnitario = document.createElement('p');
+        precioUnitario.textContent = 'Precio Unitario: $' + producto.precio;
+        productoDiv.appendChild(precioUnitario);
+
+        var totalProducto = document.createElement('p');
+        totalProducto.classList.add('precio');
+        totalProducto.textContent = 'Total: $' + (producto.precio * producto.cantidad);
+        productoDiv.appendChild(totalProducto);
+
+        productosContainer.appendChild(productoDiv);
+      });
+    }
+
+    function calcularTotal() {
+      var total = productos.reduce(function(acumulador, producto) {
+        return acumulador + (producto.precio * producto.cantidad);
+      }, 0);
+
+      var totalCompra = document.getElementById('total-compra');
+      totalCompra.textContent = 'Total de la compra: $' + total;
+    }
+
+    window.onload = function() {
+      cargarProductos();
+      calcularTotal();
+    };
   </script>
-  </div>
+</body>
+
+</html>
