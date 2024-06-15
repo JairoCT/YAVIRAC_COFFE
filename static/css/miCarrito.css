@@ -9,17 +9,16 @@
 }
 
 body {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Work Sans';
   line-height: 1.6;
   margin: 0;
   background: url('https://img.freepik.com/vector-gratis/patron-dibujo-grano-cafe-dibujado-mano_23-2150646733.jpg?w=996&t=st=1718338001~exp=1718338601~hmac=72238f92a64f45d48b62403016ef77201b324d152e91681ec2b85a31bbe97ba6') no-repeat center center fixed; /* Ruta de la imagen de fondo */
   background-size: cover;
-  
 }
 
 nav {
-  background: rgba(153, 71, 16, 0.9);
-  color: rgb(218, 214, 214);
+  background: rgb(153, 71, 16);
+  color: rgb(255, 255, 255);
   height: 60px;
   position: fixed;
   width: 100%;
@@ -97,7 +96,17 @@ nav {
   margin-top: 80px; /* Ajuste para que no quede detrás del menú fijo */
   font-family: 'Arial', sans-serif;
   color: rgb(0, 0, 0);
+  background-color: rgb(170, 84, 26);
+  border: 3px solid #FFFFFF;
+  border-radius: 35px; /* 30% menos que 50px */
+  padding: 7px; /* 30% menos que 10px */
+  width: 210px; /* Asumiendo que el ancho original era de 300px, 30% menos sería 210px */
+  display: block;
+  margin: 0 auto; /* Para centrar el óvalo horizontalmente */
+  color: #FFFFFF;
 }
+
+
 
 /* Estilos para el contenedor de productos */
 #productos-container {
@@ -113,13 +122,13 @@ nav {
   border-radius: 8px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .producto:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
 
 .producto img {
@@ -189,3 +198,7 @@ nav {
     display: block;
   }
 }
+
+
+
+
