@@ -14,7 +14,6 @@ password = '6822'
 def get_database():
     conn = connect(host =host,port =port,dbname=dbname,user=user,password=password)
     return conn  
-#los decoradores nos permite abrir desde el navegador un archivo especifico
 @app.route('/')
 def inicio():
     return render_template('index.html')
