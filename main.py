@@ -28,9 +28,31 @@ def productos():
 @app.route('/carrito')
 def carrito():
     return render_template('miCarrito.html')
-@app.route('/registro')
+@app.route('/registro', methods = ['GET','POST'])
 def registro():
-    return render_template('Registro.html')  
+    if request.method == 'GET':
+        return render_template('Registro.html')
+    if request.method == 'POST':
+        cedula = request.form['cedula']
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        correo_electronico = request.form['correo_electronico']
+        contraseña = request.form['contraseña']
+        direccion = request.form['direccion']
+        telefono = request.form['telefono']
+        fecha_nacimiento = request.form['fecha_nacimiento']
+
+        conn = get_database()
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO usuario(cedula,nombre,apellido,correo_electronico,contraseña,direccion,telefono,fecha_nacimiento) VALUES (%s,%s,%s,%s,%s,%s,%s,%s) RETURNING *', (cedula,nombre,apellido,correo_electronico,contraseña,direccion,telefono,fecha_nacimiento))
+
+        new_user = cursor.fetchone()
+        print(new_user)
+
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return redirect('/')
 #RUTAS ADMINITRADOR
 @app.route('/admin')
 def indx_admin():

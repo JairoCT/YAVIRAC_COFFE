@@ -15,26 +15,19 @@
   <!-- Botones para la navegación -->
   <nav>
     <input type="checkbox" id="menu" />
-    <label for="menu" class="checkbtn">
-    </label>
 
-    <a href="/" class="enlace">
+
+    <a href="/admin" class="enlace">
       <img src="../static/imgs/image-removebg-preview.png" class="logo">
     </a>
 
     <ul class="nav">
-      <li><a href="/">Inicio</a></li>
-      <li>
-        <a>Carrito</a>
-        <ul class="nav-vertical">
-          <li><a href="/productos">Productos</a></li>
-          <li><a href="/carrito">Mi Carrito</a></li>
-        </ul>
-      </li>
-      <li><a href="/#cont">Contactos</a></li>
-      <li><a href="/registro">Login/Registro</a></li>
+      <li><a href="/admin">Inicio</a></li>
+      <li><a href="/productos_admin">Productos</a></li>
+      <li><a href="/registro">ya logeado</a></li>
     </ul>
-  </nav><br><br><br><br>
+  </nav>
+<br><br><br><br>
 
   <div class="navigation-buttons">
     <button type="button" href='/create' > <a href='/create' class="btn btn-dark">Agregar Productos</a>
@@ -68,7 +61,7 @@
       <tr>
        <td>{{producto.stock}}</td>
        <td>{{producto.nombre_product}}</td>
-       <td>{{producto.precio_product}}</td>
+       <td>${{producto.precio_product}}</td>
 
        <td> <span style="font-size: 24px;color:green;">
           <a href="/{{producto.id}}/edit"> <i class="fas fa-edit"></i></a> </span>

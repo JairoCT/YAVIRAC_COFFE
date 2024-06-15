@@ -25,6 +25,7 @@ body, html {
     text-align: center;
     width: 90%;
     max-width: 300px;
+    margin-top: 20px;
 }
 
 .form-content h1 {
