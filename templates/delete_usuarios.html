@@ -15,22 +15,33 @@
     <div class="container">
         <table class="table">
             <thead style="background-color: rgb(189, 117, 9);color: aliceblue;">
-                <th>Stock</th>
-                <th>Nombre producto</th>
-                <th>Precio producto</th>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo electronico</th>
+                <th>Contraseña</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Fecha nacimiento</th>
+     
             </thead>
-            <tbody>
-                <tr>
-                    <td>{{producto.stock}}</td>
-                    <td>{{producto.nombre_product}}</td>
-                    <td>{{producto.precio_product}}</td>
-            </tbody>
-        </table>
-    
+     
+           <tbody>
+
+            <tr>
+                <td>{{usuarios.cedula}}</td>
+                <td>{{usuarios.nombre}}</td>
+                <td>{{usuarios.apellido}}</td>
+                <td>{{usuarios.correo_electronico}}</td>
+                <td>{{usuarios.contraseña}}</td>
+                <td>{{usuarios.direccion}}</td>
+                <td>{{usuarios.telefono}}</td>
+                <td>{{usuarios.fecha_nacimiento}}</td>
+        
         <form action='' method="post">
             Confirmar si desea eliminar el dato
             <input type="submit" value="Si" class="btn btn-danger">
-            <a href='/productos_admin' class="btn btn-dark">No</a>
+            <a href='/usuarios_admin' class="btn btn-dark">No</a>
         </form>
     </div>
    
