@@ -30,8 +30,7 @@
 <br><br><br><br>
 
   <div class="navigation-buttons">
-    <button type="button" href='/create' > <a href='/create' class="btn btn-dark">Agregar Productos</a>
-    </button>
+    <button type="button" href='/create' > <a href='/create' class="btn ">Agregar Productos</a> </button>
     <button type="button" href='/createsad'>Agregar Categorias</button>
   </div>
 
@@ -64,8 +63,8 @@
        <td>${{producto.precio_product}}</td>
 
        <td> <span style="font-size: 24px;color:green;">
-          <a href="/{{producto.id}}/edit"> <i class="fas fa-edit"></i></a> </span>
-           | <span style="font-size: 24px;color:red;">  
+            <a href="/{{producto.id}}/edit"> <i class="fas fa-edit"></i></a> </span>
+           |  <span style="font-size: 24px;color:red;">  
              <a href="/{{producto.id}}/delete"> <i class="fas fa-trash-alt"></i></a></span></td>
        {%endfor%}
        
