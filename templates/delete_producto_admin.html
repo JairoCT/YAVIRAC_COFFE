@@ -12,6 +12,21 @@
    -->
 </head>
 <body style="background-image: url('https://wallpapercave.com/wp/60P9094.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+    <nav>
+        <input type="checkbox" id="menu" />
+    
+    
+        <a href="/admin" class="enlace">
+          <img src="../static/imgs/image-removebg-preview.png" class="logo">
+        </a>
+    
+        <ul class="nav">
+          <li><a href="/admin">Inicio</a></li>
+          <li><a href="/productos_admin">Productos</a></li>
+          <li><a href="/usuarios_admin">Usuarios</a></li>
+          <li><a href="/registro">ya logeado</a></li>
+        </ul>
+    </nav><br><br><br><br><br>
     <div class="container">
         <table class="table">
             <thead style="background-color: rgb(189, 117, 9);color: aliceblue;">
@@ -28,7 +43,7 @@
         </table>
     
         <form action='' method="post">
-            Confirmar si desea eliminar el dato
+            Confirmar si desea eliminar el producto
             <input type="submit" value="Si" class="btn btn-danger">
             <a href='/productos_admin' class="btn btn-dark">No</a>
         </form>
