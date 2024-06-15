@@ -1,5 +1,5 @@
 
-from flask import Flask,request,render_template,jsonify,redirect
+from flask import Flask,request,render_template,redirect
 app = Flask (__name__)
 from psycopg2 import connect,extras
 
