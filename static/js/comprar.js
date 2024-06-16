@@ -1,7 +1,7 @@
     function comprar() {
-      var usuarioRegistrado = false; // Aquí va tu lógica de verificación
+      var usuarioRegistrado = true;
       if (usuarioRegistrado) {
-        window.location.href = "/carrito";
+        window.location.href = "http://localhost:5000/carrito";
       } else {
         mostrarModal();
       }

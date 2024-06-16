@@ -215,14 +215,21 @@
       document.getElementById('especialidades').style.display = 'block';
     }
 
+    
     function comprar() {
-      var usuarioRegistrado = false; // Aquí va tu lógica de verificación
-      if (usuarioRegistrado) {
-        window.location.href = "/carrito";
-      } else {
-        mostrarModal();
-      }
-    }
+  var usuarioRegistrado = false;
+  try {
+    usuarioRegistrado = checkUserLoggedIn();
+  } catch (error) {
+    console.error('Error al verificar el estado de inicio de sesión:', error);
+  }
+  
+  if (usuarioRegistrado) {
+    window.location.href = "/carrito";
+  } else {
+    mostrarModal();
+  }
+}
 
     function mostrarModal() {
       var modal = document.getElementById('registroModal');

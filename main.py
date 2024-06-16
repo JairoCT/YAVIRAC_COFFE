@@ -29,31 +29,73 @@ def productos():
 @app.route('/carrito')
 def carrito():
     return render_template('miCarrito.html')
-@app.route('/registro', methods = ['GET','POST'])
+
+# @app.route('/login', methods = ['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         correo = request.form['correo_electronico']
+#         contra = request.form['contraseña']
+
+#         print(correo, contra)
+#     return render_template('Registro.html')
+
+
+    
+@app.route('/registro', methods=['GET', 'POST'])
 def registro():
+    
     if request.method == 'GET':
         return render_template('Registro.html')
+
     if request.method == 'POST':
-        cedula = request.form['cedula']
-        nombre = request.form['nombre']
-        apellido = request.form['apellido']
-        correo_electronico = request.form['correo_electronico']
-        contraseña = request.form['contraseña']
-        direccion = request.form['direccion']
-        telefono = request.form['telefono']
-        fecha_nacimiento = request.form['fecha_nacimiento']
+        # Verificar si se está intentando iniciar sesión o registrar un nuevo usuario
+        if 'cedula' in request.form:  # Si hay 'cedula' en el formulario, se está registrando
+            cedula = request.form['cedula']
+            nombre = request.form['nombre']
+            apellido = request.form['apellido']
+            correo_electronico = request.form['correo_electronico']
+            contraseña = request.form['contraseña']
+            direccion = request.form['direccion']
+            telefono = request.form['telefono']
+            fecha_nacimiento = request.form['fecha_nacimiento']
 
-        conn = get_database()
-        cursor = conn.cursor()
-        cursor.execute('INSERT INTO usuario(cedula,nombre,apellido,correo_electronico,contraseña,direccion,telefono,fecha_nacimiento) VALUES (%s,%s,%s,%s,%s,%s,%s,%s) RETURNING *', (cedula,nombre,apellido,correo_electronico,contraseña,direccion,telefono,fecha_nacimiento))
+            conn = get_database()
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO usuario(cedula, nombre, apellido, correo_electronico, contraseña, direccion, telefono, fecha_nacimiento) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING *', (cedula, nombre, apellido, correo_electronico, contraseña, direccion, telefono, fecha_nacimiento))
 
-        new_user = cursor.fetchone()
-        print(new_user)
+            new_user = cursor.fetchone()
+            print(new_user)
 
-        conn.commit()
-        cursor.close()
-        conn.close()
-        return redirect('/')
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return redirect('/')
+        else:  # Si no hay 'cedula', se está intentando iniciar sesión
+            print('--------------------------------------------------')
+            data = request.get_json()
+            correo_electronico = data['correo_electronico']
+            contraseña = data['contraseña']
+
+            conn = get_database()
+            cursor = conn.cursor()
+            cursor.execute('SELECT * FROM usuario WHERE correo_electronico = %s AND contraseña = %s', (correo_electronico, contraseña))
+            user = cursor.fetchone()
+
+            cursor.close()
+            conn.close()
+
+            if user:
+                # Inicio de sesión exitoso, redirigir a otra ruta
+                return redirect('/inicio_logeado')  
+
+            # Si no se encuentra el usuario
+            return render_template('Registro.html', error='Credenciales incorrectas')
+
+
+
+
+
+
 
 @app.route('/mi_carrito_logeado') 
 def dasdasd():

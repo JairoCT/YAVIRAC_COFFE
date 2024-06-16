@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAVIRAC COFFEE</title>
+  <link rel="icon" href="../static/imgs/image-removebg-preview.png">
+  <link rel="stylesheet" href="../static/css/productos_log.css" />
+</head>
+
+<body style="background-image: url('https://wallpapercave.com/wp/60P9094.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+  <!-- Botones para la navegación -->
+  <nav>
+    <input type="checkbox" id="menu" />
+    <label for="menu" class="checkbtn">
+      <i class="fa-solid fa-bars"></i>
+    </label>
+
+    <a href="/" class="enlace">
+      <img src="../static/imgs/image-removebg-preview.png" class="logo">
+    </a>
+
+    <ul class="nav">
+      <li><a id="sad" href="/">Inicio</a></li>
+      <li>
+        <a id="sad" >Carrito</a>
+        <ul class="nav-vertical">
+          <li><a href="/productos">Productos</a></li>
+          <li><a  href="/carrito">Mi Carrito</a></li>
+        </ul>
+      </li>
+      <li><a id="sad" href="/#cont">Contactos</a></li>
+      <li><a href="/carrito"><img src="../static/imgs/cafe2.jpg" width="50" healt="Login"></a></li>
+    </ul>
+  </nav><br><br><br><br>
+
+  <!-- Botones para la navegación -->
+  <div class="navigation-buttons">
+    <button onclick="scrollToCafes()">Cafés</button>
+    <button onclick="scrollToPostres()">Postres</button>
+    <button onclick="scrollToEspecialidades()">Especialidades</button>
+  </div>
+
+
+
+  <form id="cafes" class="form" style="display: none;">
+    <h2 >Cafés</h2>
+    <div class="services">
+      
+    <tbody>
+    {% for producto in productos %}
+      <div>
+          <tr>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.nombre_product }}</td>
+            <td>${{ producto.precio_product }}</td>
+          </tr>
+          
+          <td><samp class="quantity-control">
+            <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" value="0" class="quantity" readonly>
+            <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+          </samp></td>
+        </div>
+    {% endfor %}
+    </tbody> 
+
+    </div>
+  </form>
+
+  <form id="postres" class="form" style="display: none;">
+    <h2 >Postres</h2>
+    <div class="services">
+      <div class="product">
+        <img src="../static/imgs/asd.jpg">
+        <h3>COFFEE-3$</h3>
+        <samp class="quantity-control">
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+      <!-- Aquí van más productos de café -->
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <samp class="quantity-control">
+            <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+            <input type="text" value="0" class="quantity" readonly>
+            <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+          </samp>
+      </div>
+    </div>
+  </form>
+
+  
+  <form id="especialidades" class="form" style="display: none;">
+    <h2 >Especialidades</h2>
+    <div class="services">
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE-3$</h3>
+        <samp class="quantity-control">
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+      <!-- Aquí van más productos de café -->
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+      <div class="product">
+        <img src="../static/imgs/cfe.jpg">
+        <h3>COFFEE</h3>
+        <samp class="quantity-control">
+          <button type="button" class="decrease" onclick="decreaseQuantity(this)">-</button>
+          <input type="text" value="0" class="quantity" readonly>
+          <button type="button" class="increase" onclick="increaseQuantity(this)">+</button>
+        </samp>
+      </div>
+
+    </div>
+  </form>
+
+  <!-- Botón "Comprar" -->
+  <div class="comprar-button">
+    <button onclick="comprar()">Comprar</button>
+  </div>
+
+
+  <script>
+    function scrollToCafes() {
+      document.getElementById('cafes').style.display = 'block';
+      document.getElementById('postres').style.display = 'none';
+      document.getElementById('especialidades').style.display = 'none';
+    }
+
+    function scrollToPostres() {
+      document.getElementById('cafes').style.display = 'none';
+      document.getElementById('postres').style.display = 'block';
+      document.getElementById('especialidades').style.display = 'none';
+    }
+
+    function scrollToEspecialidades() {
+      document.getElementById('cafes').style.display = 'none';
+      document.getElementById('postres').style.display = 'none';
+      document.getElementById('especialidades').style.display = 'block';
+    }
+
+    function comprar() {
+      var usuarioRegistrado = false; // Aquí va tu lógica de verificación
+      if (usuarioRegistrado) {
+        window.location.href = "/carrito";
+      } else {
+        mostrarModal();
+      }
+    }
+
+  
+  function increaseQuantity(button) {
+    var input = button.parentNode.querySelector('input.quantity');
+    var currentValue = parseInt(input.value);
+    input.value = currentValue + 1;
+  }
+
+  function decreaseQuantity(button) {
+    var input = button.parentNode.querySelector('input.quantity');
+    var currentValue = parseInt(input.value);
+    if (currentValue > 0) {
+      input.value = currentValue - 1;
+    }
+  }
+
+  </script>
+
+</style>
+</body>
+
+</html>

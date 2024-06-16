@@ -33,7 +33,7 @@ nav {
   cursor: pointer;
   
 }
-.nav > li > a {
+#sad{
   padding: 13px 15px;
   color: rgb(255, 255, 255);
   display: inline-block;
@@ -310,7 +310,7 @@ background-color: rgb(150, 87, 45);
 }
 
 nav ul img {
-  border-radius: 50%;
-  align-content: center;
-  margin-top: 2px;
-}
+    border-radius: 50%;
+    align-content: center;
+    margin-top: 2px;
+  }
