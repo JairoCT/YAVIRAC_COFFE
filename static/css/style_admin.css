@@ -108,3 +108,39 @@ nav {
 .Pie-Pagina .grupo-2 small{
   font-size: 20px;
 }
+
+.container {
+  max-width: 600px; /* Ajusta esto según el ancho deseado para tu formulario */
+  margin: auto;
+  padding: 20px;
+  background-color: #f3f3f3; /* Color de fondo del contenedor */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn-success {
+  background-color: #28a745; /* Color de fondo para el botón de actualizar */
+}
+
+.btn-dark {
+  background-color: #343a40; /* Color de fondo para el botón de cancelar */
+}
