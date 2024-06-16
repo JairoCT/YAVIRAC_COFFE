@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAVIRAC COFFEE</title>
+  <link rel="icon" href="../static/imgs/image-removebg-preview.png">
+  <link rel="stylesheet" href="../static/css/miCarrito.css" />
+</head>
+
+<body>
+  <nav>
+    <input type="checkbox" id="menu" />
+    <label for="menu" class="checkbtn">
+      <i class="fa-solid fa-bars"></i>
+    </label>
+
+    <a href="/" class="enlace">
+      <img src="../static/imgs/image-removebg-preview.png" class="logo">
+    </a>
+
+    <ul class="nav">
+      <li><a href="/">Inicio</a></li>
+      <li>
+        <a>Carrito</a>
+        <ul class="nav-vertical">
+          <li><a href="/productos">Productos</a></li>
+          <li><a href="/carrito">Mi Carrito</a></li>
+        </ul>
+      </li>
+      <li><a href="/#cont">Contactos</a></li>
+      <li><a href="/carrito"><img src="../static/imgs/cafe2.jpg" width="50" height="50" "Login"></a></li>
+
+    </ul>
+  </nav>
+
+
+  <br><br><br><br><h1 id="carrito-titulo">Carrito</h1>
+
+  <div id="productos-container">
+    <!-- Los productos se cargarán aquí mediante JavaScript -->
+  </div>
+
+  <div id="total-compra">
+    <!-- El total se calculará y mostrará aquí -->
+  </div>
+
+  <script>
+    var productos = [
+      { id: 1, nombre: 'Café Especial', imagen: '.../static/imgs/cafe.png', precio: 3, cantidad: 2 },
+      { id: 2, nombre: 'Postre de Chocolate', imagen: '.../static/imgs/cafe2.jpg ', precio: 5, cantidad: 1 }
+    ];
+
+    function cargarProductos() {
+      var productosContainer = document.getElementById('productos-container');
+
+      productos.forEach(function(producto) {
+        var productoDiv = document.createElement('div');
+        productoDiv.classList.add('producto');
+
+        var imagen = document.createElement('img');
+        imagen.src = producto.imagen;
+        imagen.alt = producto.nombre;
+        productoDiv.appendChild(imagen);
+
+        var nombreProducto = document.createElement('h3');
+        nombreProducto.textContent = producto.nombre;
+        productoDiv.appendChild(nombreProducto);
+
+        var cantidad = document.createElement('p');
+        cantidad.textContent = 'Cantidad: ' + producto.cantidad;
+        productoDiv.appendChild(cantidad);
+
+        var precioUnitario = document.createElement('p');
+        precioUnitario.textContent = 'Precio Unitario: $' + producto.precio;
+        productoDiv.appendChild(precioUnitario);
+
+        var totalProducto = document.createElement('p');
+        totalProducto.classList.add('precio');
+        totalProducto.textContent = 'Total: $' + (producto.precio * producto.cantidad);
+        productoDiv.appendChild(totalProducto);
+
+        productosContainer.appendChild(productoDiv);
+      });
+    }
+
+    function calcularTotal() {
+      var total = productos.reduce(function(acumulador, producto) {
+        return acumulador + (producto.precio * producto.cantidad);
+      }, 0);
+
+      var totalCompra = document.getElementById('total-compra');
+      totalCompra.textContent = 'Total de la compra: $' + total;
+    }
+
+    window.onload = function() {
+      cargarProductos();
+      calcularTotal();
+    };
+  </script>
+</body>
+
+</html>

@@ -23,6 +23,8 @@ def productos():
     cursor = conn.cursor(cursor_factory=extras.RealDictCursor)
     cursor.execute('SELECT * FROM productos')
     productos = cursor.fetchall()
+    cursor.close()
+    conn.close()
     return render_template('Productos.html', productos=productos)
 @app.route('/carrito')
 def carrito():
@@ -52,6 +54,22 @@ def registro():
         cursor.close()
         conn.close()
         return redirect('/')
+
+@app.route('/mi_carrito_logeado') 
+def dasdasd():
+    return render_template('mi_carrito_logeado.html')
+@app.route('/productos_logeado') 
+def asda():
+    return render_template('productos_logeado.html')
+@app.route('/inicio_logeado') 
+def dads():
+    return render_template('inicio_logeado.html')
+@app.route('/confirmar_compra') 
+def fas():
+    return render_template('confirmar_compra.html')
+
+
+
 #RUTAS ADMINITRADOR
 @app.route('/admin')
 def indx_admin():
@@ -62,6 +80,8 @@ def Productos_admin():
     cursor = conn.cursor(cursor_factory=extras.RealDictCursor)
     cursor.execute('SELECT * FROM productos')
     productos = cursor.fetchall()
+    cursor.close()
+    conn.close()
     return render_template('Productos_admin.html', productos=productos)
 @app.route('/<int:id>/edit', methods=['GET', 'POST'])
 def edit_product(id):
@@ -165,6 +185,8 @@ def usuarios_admin():
     cursor = conn.cursor(cursor_factory=extras.RealDictCursor)
     cursor.execute('SELECT * FROM usuario')
     usuarios = cursor.fetchall()
+    cursor.close()
+    conn.close()
     return render_template('usuarios_admin.html', usuarios=usuarios)
 
 
