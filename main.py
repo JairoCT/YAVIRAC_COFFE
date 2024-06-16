@@ -29,18 +29,7 @@ def productos():
 @app.route('/carrito')
 def carrito():
     return render_template('miCarrito.html')
-
-# @app.route('/login', methods = ['GET', 'POST'])
-# def login():
-#     if request.method == 'POST':
-#         correo = request.form['correo_electronico']
-#         contra = request.form['contraseña']
-
-#         print(correo, contra)
-#     return render_template('Registro.html')
-
-
-    
+ 
 @app.route('/registro', methods=['GET', 'POST'])
 def registro():
     
@@ -61,17 +50,14 @@ def registro():
 
             conn = get_database()
             cursor = conn.cursor()
-            cursor.execute('INSERT INTO usuario(cedula, nombre, apellido, correo_electronico, contraseña, direccion, telefono, fecha_nacimiento) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING *', (cedula, nombre, apellido, correo_electronico, contraseña, direccion, telefono, fecha_nacimiento))
+            cursor.execute('INSERT INTO usuario(cedula, nombre, apellido, correo_electronico, contraseña, direccion, telefono, fecha_nacimiento, id_rol) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING *', (cedula, nombre, apellido, correo_electronico, contraseña, direccion, telefono, fecha_nacimiento, 1))
 
-            new_user = cursor.fetchone()
-            print(new_user)
 
             conn.commit()
             cursor.close()
             conn.close()
             return redirect('/')
         else:  # Si no hay 'cedula', se está intentando iniciar sesión
-            print('--------------------------------------------------')
             data = request.get_json()
             correo_electronico = data['correo_electronico']
             contraseña = data['contraseña']
