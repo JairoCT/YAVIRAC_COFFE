@@ -183,9 +183,10 @@ def edit_correo(id):
         direccion = request.form['direccion']
         telefono = request.form['telefono']
         fecha_nacimiento = request.form['fecha_nacimiento']
+        id_rol = request.form['id_rol']
         # Actualiza la información del producto en la base de datos
-        cursor.execute('UPDATE usuario SET cedula = %s, nombre = %s, apellido = %s, correo_electronico = %s, contraseña = %s, direccion = %s, telefono = %s, fecha_nacimiento = %s WHERE id = %s', 
-                       (cedula, nombre, apellido, correo_electronico, contraseña, direccion, telefono, fecha_nacimiento,id))
+        cursor.execute('UPDATE usuario SET cedula = %s, nombre = %s, apellido = %s, correo_electronico = %s, contraseña = %s, direccion = %s, telefono = %s, fecha_nacimiento = %s, id_rol  = %s WHERE id = %s', 
+                       (cedula, nombre, apellido, correo_electronico, contraseña, direccion, telefono, fecha_nacimiento,id_rol, id))
         conn.commit()
         cursor.close()
         conn.close()
