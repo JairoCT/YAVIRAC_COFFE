@@ -26,7 +26,6 @@ nav {
 .nav {
   list-style: none;
   display: flex;
-  line-height: 30px;
   height: 55px;
   margin-right: 10px;
   float: right;

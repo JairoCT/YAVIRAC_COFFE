@@ -16,27 +16,25 @@
       <i class="fa-solid fa-bars"></i>
     </label>
 
-    <a href="/" class="enlace">
+    <a href="/inicio_logeado" class="enlace">
       <img src="../static/imgs/image-removebg-preview.png" class="logo">
     </a>
 
     <ul class="nav">
-      <li><a href="/">Inicio</a></li>
-      <li>
-        <a>Carrito</a>
+      <li><a href="/datos_usuario"><img src="../static/imgs/cafe2.jpg" width="50" healt="Login">        
         <ul class="nav-vertical">
-          <li><a href="/productos">Productos</a></li>
-          <li><a href="/carrito">Mi Carrito</a></li>
+          <li><a  href="/">Cerrar sesion</a></li>
+        </ul> </a></li>
+      <li><a id="sad" href="/inicio_logeado">Inicio</a></li>
+      <li>
+        <a id="sad" >Carrito</a>
+        <ul class="nav-vertical">
+          <li><a href="/productos_logeado">Productos</a></li>
+          <li><a  href="/mi_carrito_logeado">Mi Carrito</a></li>
         </ul>
       </li>
-      <li><a href="/#cont">Contactos</a></li>
-      <li><a href="/carrito"><img src="../static/imgs/cafe2.jpg" width="50" healt="Login">
-        <ul class="nav-vertical">
-          <li><a href="">Cerrar Cesion</a></li>
-          <li><a href="">Mi Perfil</a></li>
-        </ul>
-      </a>
-      </li>    
+      <li><a id="sad" href="/inicio_logeado#cont">Contactos</a></li>
+
     </ul>
   </nav>
 
@@ -113,34 +111,75 @@
 
   <footer class="Pie-Pagina" id="cont">
 
-    <div class="grupo-1">
-
-      <div class="box">
-        <h2>Contactos</h2>
-        <ul>
-          <li><a href="#">Telefonos: 02-3123144</a></li>
-          <li><a href="https://maps.app.goo.gl/3rKjmLGHirTGpRv87">Direccion: García Moreno S4-35 y, Quito 170401</a>
-          </li>
-          <li><a href="mailto:tellitomurillodonoso@gmail.com">Email: "tellitomurillodonoso@gmail.com"</a></li>
-          <li><a href="tel:+593099868394087291627">whatsapp: 0998683940</a></li>
-          <li><a><br>Desarrollado por:<br>Cuichan Toapanta Jairo Ismael<br>Murillo Donoso Hugo Mateo
-              <br> Bedón Muñoz Jeremy Jofre<br>Ponce Suntaxi Alisson Johanna </a></li>
-        </ul>
-      </div>
-      <div class="box">
-        <h2>Ubicacion</h2>
-        <a><iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7875332920307!2d-78.51926862584871!3d-0.2250843997726987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a28366b3d81%3A0xc6029256689ed873!2sInstituto%20Superior%20Tecnol%C3%B3gico%20Yavirac!5e0!3m2!1ses!2sec!4v1703912354320!5m2!1ses!2sec"
-            width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe></a>
-        </a>
-      </div>
-
-    </div>
+    <nav>
+      <input type="checkbox" id="menu" />
+      <label for="menu" class="checkbtn">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+  
+      <a href="/inicio_logeado" class="enlace">
+        <img src="../static/imgs/image-removebg-preview.png" class="logo">
+      </a>
+  
+      <ul class="nav">
+        <li><a href="/datos_usuario"><img src="../static/imgs/cafe2.jpg" width="50" healt="Login">        
+          <ul class="nav-vertical">
+            <li><a href="/datos_usuario">Mis datos</a></li>
+            <li><a  href="/">Cerrar sesion</a></li>
+          </ul> </a></li>
+        <li><a id="sad" href="/inicio_logeado">Inicio</a></li>
+        <li>
+          <a id="sad" >Carrito</a>
+          <ul class="nav-vertical">
+            <li><a href="/productos_logeado">Productos</a></li>
+            <li><a  href="/mi_carrito_logeado">Mi Carrito</a></li>
+          </ul>
+        </li>
+        <li><a id="sad" href="/inicio_logeado#cont">Contactos</a></li>
+  
+      </ul>
+    </nav>
     <div class="grupo-2">
       <small>&copy; 2024 <b>YAVIRAC COFFEE</b> - Todos los derechos reservados.</small>
     </div>
+    <div id="message-container"></div>
   </footer>
+  <script>
+    window.onload = function() {
+      // Mostrar mensaje si hay uno en la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const message = urlParams.get('message');
+      const messageContainer = document.getElementById('message-container');
+  
+      if (message === 'success') {
+        showMessage('Pedido hecho exitosamente', 'green');
+      } else if (message === 'cancel') {
+        showMessage('Fue cancelada su orden', 'red');
+      }
+  
+      // Función para mostrar el mensaje
+      function showMessage(text, color) {
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = text;
+        messageDiv.style.backgroundColor = color;
+        messageDiv.style.color = 'white';
+        messageDiv.style.padding = '10px';
+        messageDiv.style.position = 'fixed';
+        messageDiv.style.top = '20px';
+        messageDiv.style.left = '50%';
+        messageDiv.style.transform = 'translateX(-50%)';
+        messageDiv.style.borderRadius = '5px';
+        messageDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
+        messageDiv.style.zIndex = '1000';
+        messageContainer.appendChild(messageDiv);
+  
+        // Ocultar mensaje después de 3 segundos
+        setTimeout(function() {
+          messageDiv.remove();
+        }, 3000); // 3000 milisegundos = 3 segundos
+      }
+    };
+  </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Work+Sans&display=swap');
 
 * {
   margin: 0;
@@ -26,14 +26,13 @@ nav {
 .nav {
   list-style: none;
   display: flex;
-  line-height: 30px;
   height: 55px;
   margin-right: 10px;
   float: right;
   cursor: pointer;
   
 }
-.nav > li > a {
+#sad{
   padding: 13px 15px;
   color: rgb(255, 255, 255);
   display: inline-block;
@@ -202,30 +201,29 @@ nav {
 .carrusel img.active {
   opacity: 1;
 }
-
 @media (max-width: 800px) {
-    .checkbtn {
-      display: block;
-    }
-  
-    nav ul {
-      display: none;
-      width: 100%;
-      justify-content: space-around;
-      position: fixed;
-      top: 60px;
-      left: -100%;
-      text-align: center;
-      transition: all 0.5s;
-      background: #333;
-    }
-  
-    nav ul li {
-      display: block;
-    }
+  .checkbtn {
+    display: block;
   }
-   nav ul img {
-    border-radius: 50%;
-    align-content: center;
-    margin-top: 2px;
+
+  nav ul {
+    display: none;
+    width: 100%;
+    justify-content: space-around;
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    background: #333;
   }
+
+  nav ul li {
+    display: block;
+  }
+}
+ nav ul img {
+  border-radius: 50%;
+  align-content: center;
+  margin-top: 2px;
+}

@@ -34,8 +34,8 @@
     </ul>
   </nav>
 
-
-  <br><br><br><br><h1 id="carrito-titulo">Carrito</h1>
+  <br><br><br><br>
+  <h1 id="carrito-titulo">Carrito</h1>
 
   <div id="productos-container">
     <!-- Los productos se cargarán aquí mediante JavaScript -->
@@ -46,22 +46,20 @@
   </div>
 
   <script>
-    var productos = [
-      { id: 1, nombre: 'Café Especial', imagen: '.../static/imgs/cafe.png', precio: 3, cantidad: 2 },
-      { id: 2, nombre: 'Postre de Chocolate', imagen: '.../static/imgs/cafe2.jpg ', precio: 5, cantidad: 1 }
-    ];
-
     function cargarProductos() {
+      var productos = JSON.parse(localStorage.getItem('productosSeleccionados')) || [];
       var productosContainer = document.getElementById('productos-container');
+
+      productosContainer.innerHTML = '';
+
+      if (productos.length === 0) {
+        productosContainer.innerHTML = '<p>No hay productos en el carrito.</p>';
+        return;
+      }
 
       productos.forEach(function(producto) {
         var productoDiv = document.createElement('div');
         productoDiv.classList.add('producto');
-
-        var imagen = document.createElement('img');
-        imagen.src = producto.imagen;
-        imagen.alt = producto.nombre;
-        productoDiv.appendChild(imagen);
 
         var nombreProducto = document.createElement('h3');
         nombreProducto.textContent = producto.nombre;
@@ -85,6 +83,7 @@
     }
 
     function calcularTotal() {
+      var productos = JSON.parse(localStorage.getItem('productosSeleccionados')) || [];
       var total = productos.reduce(function(acumulador, producto) {
         return acumulador + (producto.precio * producto.cantidad);
       }, 0);
@@ -98,6 +97,44 @@
       calcularTotal();
     };
   </script>
+
+  <style>
+    /* Estilos básicos para el carrito */
+    #productos-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .producto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 16px;
+      margin: 8px;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .producto h3 {
+      margin: 8px 0;
+      font-size: 1.2em;
+    }
+
+    .producto p {
+      margin: 4px 0;
+      font-size: 1em;
+    }
+
+    #total-compra {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-top: 16px;
+    }
+  </style>
 </body>
 
 </html>
+

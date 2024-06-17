@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -182,86 +181,103 @@
     </div>
   </form>
 
-  <!-- Botón "Comprar" -->
   <div class="comprar-button">
-    <button onclick="comprar()">Comprar</button>
+    <button id="comprar-btn">Comprar</button>
   </div>
-
-  <!-- Modal -->
-  <div id="registroModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="cerrarModal()">&times;</span>
-      <p>¡Debes registrarte para comprar!</p>
-      <button onclick="window.location.href='/registro'">Registrarse</button>
-    </div>
-  </div>
+  
+  <script>
+    document.getElementById('comprar-btn').addEventListener('click', function() {
+      window.location.href = '/carrito';
+    });
+  </script>  
 
   <script>
-    function scrollToCafes() {
-      document.getElementById('cafes').style.display = 'block';
-      document.getElementById('postres').style.display = 'none';
-      document.getElementById('especialidades').style.display = 'none';
-    }
+    // Funciones para cambiar entre secciones
+function scrollToCafes() {
+  document.getElementById('cafes').style.display = 'block';
+  document.getElementById('postres').style.display = 'none';
+  document.getElementById('especialidades').style.display = 'none';
+}
 
-    function scrollToPostres() {
-      document.getElementById('cafes').style.display = 'none';
-      document.getElementById('postres').style.display = 'block';
-      document.getElementById('especialidades').style.display = 'none';
-    }
+function scrollToPostres() {
+  document.getElementById('cafes').style.display = 'none';
+  document.getElementById('postres').style.display = 'block';
+  document.getElementById('especialidades').style.display = 'none';
+}
 
-    function scrollToEspecialidades() {
-      document.getElementById('cafes').style.display = 'none';
-      document.getElementById('postres').style.display = 'none';
-      document.getElementById('especialidades').style.display = 'block';
-    }
+function scrollToEspecialidades() {
+  document.getElementById('cafes').style.display = 'none';
+  document.getElementById('postres').style.display = 'none';
+  document.getElementById('especialidades').style.display = 'block';
+}
 
-    
-  function comprar() {
-    usuarioRegistrado = true;
+// Función para manejar la compra
+function comprar() {
+  var usuarioRegistrado = false; // Inicialmente asumimos que el usuario no está registrado
+
   try {
+    // Llamamos a la función para verificar el estado de inicio de sesión
+    usuarioRegistrado = checkUserLoggedIn();
+    console.log('Usuario registrado:', usuarioRegistrado);
   } catch (error) {
     console.error('Error al verificar el estado de inicio de sesión:', error);
   }
   
   if (usuarioRegistrado) {
+    // Si el usuario está registrado, redireccionamos al carrito
+    console.log('Redireccionando al carrito...');
     window.location.href = "/carrito";
   } else {
+    // Si el usuario no está registrado, mostramos el modal de registro
+    console.log('Mostrando modal de registro...');
     mostrarModal();
   }
 }
 
-    function mostrarModal() {
-      var modal = document.getElementById('registroModal');
-      modal.style.display = "block";
-    }
+// Función para mostrar el modal de registro
+function mostrarModal() {
+  var modal = document.getElementById('registroModal');
+  modal.style.display = "block";
+}
 
-    function cerrarModal() {
-      var modal = document.getElementById('registroModal');
-      modal.style.display = "none";
-    }
+// Función para cerrar el modal de registro
+function cerrarModal() {
+  var modal = document.getElementById('registroModal');
+  modal.style.display = "none";
+}
 
-    // Para cerrar el modal si el usuario hace clic fuera de él
-    window.onclick = function(event) {
-      var modal = document.getElementById('registroModal');
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-
-  
-  function increaseQuantity(button) {
-    var input = button.parentNode.querySelector('input.quantity');
-    var currentValue = parseInt(input.value);
-    input.value = currentValue + 1;
+// Para cerrar el modal si el usuario hace clic fuera de él
+window.onclick = function(event) {
+  var modal = document.getElementById('registroModal');
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
+}
 
-  function decreaseQuantity(button) {
-    var input = button.parentNode.querySelector('input.quantity');
-    var currentValue = parseInt(input.value);
-    if (currentValue > 0) {
-      input.value = currentValue - 1;
-    }
+// Funciones para ajustar la cantidad
+function increaseQuantity(button) {
+  var input = button.parentNode.querySelector('input.quantity');
+  var currentValue = parseInt(input.value);
+  input.value = currentValue + 1;
+}
+
+function decreaseQuantity(button) {
+  var input = button.parentNode.querySelector('input.quantity');
+  var currentValue = parseInt(input.value);
+  if (currentValue > 0) {
+    input.value = currentValue - 1;
   }
+}
+
+// Función para verificar el estado de inicio de sesión (debes implementar esta función según tu lógica de autenticación)
+function checkUserLoggedIn() {
+  // Aquí deberías implementar la lógica para verificar si el usuario está autenticado
+  // Por ejemplo, podrías hacer una llamada a una API que verifique el estado de sesión del usuario
+  // y devolver true si está autenticado y false si no lo está.
+  // Este es un ejemplo ficticio:
+  return true; // Devuelve true si el usuario está autenticado
+}
+
 
   </script>
 
@@ -346,12 +362,6 @@
 </body>
 
 </html>
-
-
-
-
-
-
 
 
 

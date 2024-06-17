@@ -1,5 +1,5 @@
 
-from flask import Flask,request,render_template,redirect
+from flask import Flask,request,render_template,redirect, jsonify
 app = Flask (__name__)
 from psycopg2 import connect,extras
 
@@ -69,12 +69,10 @@ def registro():
 
             cursor.close()
             conn.close()
-
+        # 
             if user:
-                # Inicio de sesión exitoso, redirigir a otra ruta
-                return redirect('/inicio_logeado')  
+                return redirect('/inicio_logeado')
 
-            # Si no se encuentra el usuario
             return render_template('Registro.html', error='Credenciales incorrectas')
 
 
@@ -87,8 +85,14 @@ def registro():
 def dasdasd():
     return render_template('mi_carrito_logeado.html')
 @app.route('/productos_logeado') 
-def asda():
-    return render_template('productos_logeado.html')
+def productos_logeado():
+    conn = get_database()
+    cursor = conn.cursor(cursor_factory=extras.RealDictCursor)
+    cursor.execute('SELECT * FROM productos')
+    productos = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return render_template('productos_logeado.html', productos=productos)
 @app.route('/inicio_logeado') 
 def dads():
     return render_template('inicio_logeado.html')
@@ -96,6 +100,9 @@ def dads():
 def fas():
     return render_template('confirmar_compra.html')
 
+@app.route('/datos_usuario')
+def datos_usuarios():
+    return render_template('datos_usuario.html')
 
 
 #RUTAS ADMINITRADOR

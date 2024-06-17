@@ -17,21 +17,25 @@
       <i class="fa-solid fa-bars"></i>
     </label>
 
-    <a href="/" class="enlace">
+    <a href="/inicio_logeado" class="enlace">
       <img src="../static/imgs/image-removebg-preview.png" class="logo">
     </a>
 
     <ul class="nav">
-      <li><a id="sad" href="/">Inicio</a></li>
+      <li><a href="/datos_usuario"><img src="../static/imgs/cafe2.jpg" width="50" healt="Login">        
+        <ul class="nav-vertical">
+          <li><a  href="/">Cerrar sesion</a></li>
+        </ul> </a></li>
+      <li><a id="sad" href="/inicio_logeado">Inicio</a></li>
       <li>
         <a id="sad" >Carrito</a>
         <ul class="nav-vertical">
-          <li><a href="/productos">Productos</a></li>
-          <li><a  href="/carrito">Mi Carrito</a></li>
+          <li><a href="/productos_logeado">Productos</a></li>
+          <li><a  href="/mi_carrito_logeado">Mi Carrito</a></li>
         </ul>
       </li>
-      <li><a id="sad" href="/#cont">Contactos</a></li>
-      <li><a href="/carrito"><img src="../static/imgs/cafe2.jpg" width="50" healt="Login"></a></li>
+      <li><a id="sad" href="/inicio_logeado#cont">Contactos</a></li>
+
     </ul>
   </nav><br><br><br><br>
 
@@ -163,9 +167,10 @@
   </form>
 
   <!-- Botón "Comprar" -->
-  <div class="comprar-button">
-    <button onclick="comprar()">Comprar</button>
-  </div>
+  
+    <div class="comprar-button">
+      <button id="comprar-btn">Comprar</button>
+    </div>
 
 
   <script>
@@ -187,29 +192,21 @@
       document.getElementById('especialidades').style.display = 'block';
     }
 
-    function comprar() {
-      var usuarioRegistrado = false; // Aquí va tu lógica de verificación
-      if (usuarioRegistrado) {
-        window.location.href = "/carrito";
-      } else {
-        mostrarModal();
-      }
+    function calcularTotal() {
+      var total = productos.reduce(function(acumulador, producto) {
+        return acumulador + (producto.precio * producto.cantidad);
+      }, 0);
+
+      var totalCompra = document.getElementById('total-compra');
+      totalCompra.textContent = 'Total de la compra: $' + total;
     }
 
-  
-  function increaseQuantity(button) {
-    var input = button.parentNode.querySelector('input.quantity');
-    var currentValue = parseInt(input.value);
-    input.value = currentValue + 1;
-  }
 
-  function decreaseQuantity(button) {
-    var input = button.parentNode.querySelector('input.quantity');
-    var currentValue = parseInt(input.value);
-    if (currentValue > 0) {
-      input.value = currentValue - 1;
-    }
-  }
+    document.getElementById('comprar-btn').addEventListener('click', function() {
+      window.location.href = 'http://localhost:5000/mi_carrito_logeado';
+    });
+
+    
 
   </script>
 

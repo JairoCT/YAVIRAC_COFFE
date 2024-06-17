@@ -13,6 +13,10 @@ async function loguear() {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
+    const admins = [
+        'jit.cuichan@yavirac.edu.ec', 
+    ]
+    
     fetch('/registro', {
         method: 'POST',
         headers: {
@@ -25,7 +29,13 @@ async function loguear() {
     })
     .then(data => {
         if (data.redirected) {
-            window.location.href = '/inicio_logeado'; // Redirigir si se recibe la URL de redirección
+            const isAdmin = admins.includes(email);
+            if(isAdmin) {
+                window.location.href = '/admin';
+            } else {
+                window.location.href = '/inicio_logeado';
+            }
+            
         } else {
             throw new Error('Usuario no encontrado')
         }

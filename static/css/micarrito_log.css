@@ -40,7 +40,6 @@ nav {
 .nav {
   list-style: none;
   display: flex;
-  line-height: 30px;
   height: 55px;
   margin-right: 10px;
   float: right;
@@ -202,4 +201,32 @@ nav {
   border-radius: 50%;
   align-content: center;
   margin-top: 2px;
+}
+.botones-compra {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.botones-compra button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#cancelar-compra {
+  background-color: #dc3545;
+  color: white;
+}
+#cancelar-compra:hover {
+  background-color: #c82333;
+}
+#confirmar-compra {
+  background-color: #28a745;
+  color: white;
+}
+#confirmar-compra:hover {
+  background-color: #218838;
 }

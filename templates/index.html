@@ -131,10 +131,49 @@
       </div>
 
     </div>
+    //*jairo que mas hacemos*//
     <div class="grupo-2">
       <small>&copy; 2024 <b>YAVIRAC COFFEE</b> - Todos los derechos reservados.</small>
     </div>
-  </footer>
-</body>
+    <div id="message-container"></div>
 
+  </footer>
+  
+</body>
+<script>
+  window.onload = function() {
+    // Mostrar mensaje si hay uno en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('message');
+    const messageContainer = document.getElementById('message-container');
+
+    if (message === 'success') {
+      showMessage('Pedido hecho exitosamente', 'green');
+    } else if (message === 'cancel') {
+      showMessage('Fue cancelada su orden', 'red');
+    }
+
+    // Función para mostrar el mensaje
+    function showMessage(text, color) {
+      const messageDiv = document.createElement('div');
+      messageDiv.textContent = text;
+      messageDiv.style.backgroundColor = color;
+      messageDiv.style.color = 'white';
+      messageDiv.style.padding = '10px';
+      messageDiv.style.position = 'fixed';
+      messageDiv.style.top = '20px';
+      messageDiv.style.left = '50%';
+      messageDiv.style.transform = 'translateX(-50%)';
+      messageDiv.style.borderRadius = '5px';
+      messageDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
+      messageDiv.style.zIndex = '1000';
+      messageContainer.appendChild(messageDiv);
+
+      // Ocultar mensaje después de 3 segundos
+      setTimeout(function() {
+        messageDiv.remove();
+      }, 3000); // 3000 milisegundos = 3 segundos
+    }
+  };
+</script>
 </html>

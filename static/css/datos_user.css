@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #1f1f1f;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+button {
+    margin-top: 10px;
+}
+body {
+    background: url('https://thumbs.dreamstime.com/b/chicchi-di-caff%C3%A8-sulla-vecchia-carta-pergamena-8013123.jpg');
+    color: rgb(170, 84, 26); /* This will set the text color */
+    color: #ddd;
+    text-align: center;
+}
+
+table {
+    background-color: rgb(117, 52, 8); /* This will set the table background */
+    /* Rest of your table styles */
+}
+
+/* You may also want to style the buttons */
+button {
+    background-color: rgb(170, 84, 26); /* Button background */
+    color: white; /* Button text color */
+    border: none; /* Removes the border */
+    padding: 10px 20px; /* Adds some padding */
+    text-transform: uppercase; /* Makes the text uppercase */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+button:hover {
+    background-color: rgb(137, 68, 20); /* Darker shade for hover effect */
+}
