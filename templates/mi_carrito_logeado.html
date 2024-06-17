@@ -42,7 +42,7 @@
   <div id="productos-container">
     <!-- Los productos se cargarán aquí mediante JavaScript -->
   </div>
-
+  <div id="message-container"></div>
   <div id="total-compra">
     <!-- El total se calculará y mostrará aquí -->
   </div>
@@ -52,7 +52,7 @@
   <button id="cancelar-compra"  >Cancelar Compra</button>
   <button id="confirmar-compra"  >Confirmar Compra</button>
 </div>
-
+<div id="message-container"></div>
   <script>
     var productos = [
       { id: 1, nombre: 'Café Especial', imagen: '.../static/imgs/cafe.png', precio: 3, cantidad: 2 },
@@ -114,7 +114,41 @@ document.getElementById('confirmar-compra').addEventListener('click', function()
   window.location.href = 'http://localhost:5000/inicio_logeado?message=success';
 });
 
-
+window.onload = function() {
+      // Mostrar mensaje si hay uno en la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const message = urlParams.get('message');
+      const messageContainer = document.getElementById('message-container');
+  
+      if (message === 'success') {
+        showMessage('Pedido hecho exitosamente', 'green');
+      } else if (message === 'cancel') {
+        showMessage('Fue cancelada su orden', 'red');
+      }
+  
+      // Función para mostrar el mensaje
+      function showMessage(text, color) {
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = text;
+        messageDiv.style.backgroundColor = color;
+        messageDiv.style.color = 'white';
+        messageDiv.style.padding = '10px';
+        messageDiv.style.position = 'fixed';
+        messageDiv.style.top = '20px';
+        messageDiv.style.left = '50%';
+        messageDiv.style.transform = 'translateX(-50%)';
+        messageDiv.style.borderRadius = '5px';
+        messageDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
+        messageDiv.style.zIndex = '1000';
+        messageContainer.appendChild(messageDiv);
+  
+        // Ocultar mensaje después de 3 segundos
+        setTimeout(function() {
+          messageDiv.remove();
+        }, 3000); // 3000 milisegundos = 3 segundos
+      }
+    };
+  </script>
   </script>
 </body>
 
