@@ -192,20 +192,25 @@
       document.getElementById('especialidades').style.display = 'block';
     }
 
-    function calcularTotal() {
-      var total = productos.reduce(function(acumulador, producto) {
-        return acumulador + (producto.precio * producto.cantidad);
-      }, 0);
-
-      var totalCompra = document.getElementById('total-compra');
-      totalCompra.textContent = 'Total de la compra: $' + total;
+    function decreaseQuantity(button) {
+      // Implementación para decrementar la cantidad
+      var input = button.nextElementSibling;
+      var currentValue = parseInt(input.value);
+      if (currentValue > 0) {
+        input.value = currentValue - 1;
+      }
     }
 
+    function increaseQuantity(button) {
+      // Implementación para incrementar la cantidad
+      var input = button.previousElementSibling;
+      var currentValue = parseInt(input.value);
+      input.value = currentValue + 1;
+    }
 
     document.getElementById('comprar-btn').addEventListener('click', function() {
       window.location.href = 'http://localhost:5000/mi_carrito_logeado';
     });
-
     
 
   </script>

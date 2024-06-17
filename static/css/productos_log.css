@@ -309,7 +309,7 @@ background-color: rgb(150, 87, 45);
 }
 
 nav ul img {
-    border-radius: 50%;
-    align-content: center;
-    margin-top: 2px;
-  }
+  align-content: center;
+  margin-top: 2px;
+  border-radius: 50%;
+}
