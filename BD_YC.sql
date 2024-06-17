@@ -5,8 +5,6 @@ nombre_product VARCHAR (25),
 precio_product decimal
 );
 
-
-
 INSERT INTO productos (stock,nombre_product,precio_product) VALUES (20, 'Expresso' , 2.00);
 INSERT INTO productos (stock,nombre_product,precio_product) VALUES (30, 'Americano' , 4.00);
 INSERT INTO productos (stock,nombre_product,precio_product) VALUES (40, 'Café con leche' , 3.00);
@@ -33,3 +31,24 @@ CREATE TABLE usuario(
     id_rol INT,
     FOREIGN KEY (id_rol) REFERENCES rol(id_rol));
 
+CREATE TABLE Pedidos(
+	id serial primary key,
+	Cantidad integer,
+	Fecha_pedido date,
+	Subtotal integer,
+	Iva_Incluido integer,
+	Total_todo integer);
+
+
+CREATE TABLE Carrito(
+	id serial primary key,
+    Productos varchar(50),
+	Cantidad integer,
+	Precio decimal,
+	Total integer);
+
+
+CREATE TABLE Categoria(
+    id serial primary key,
+    Nombre_Categ varchar(50)
+);
