@@ -100,9 +100,6 @@ def dads():
 def fas():
     return render_template('confirmar_compra.html')
 
-@app.route('/datos_usuario')
-def datos_usuarios():
-    return render_template('datos_usuario.html')
 
 
 #RUTAS ADMINITRADOR
